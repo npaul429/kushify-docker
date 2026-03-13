@@ -1,0 +1,31 @@
+services:
+  nginx:
+    image: nginx:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - pitch-deck
+      - game
+    restart: unless-stopped
+
+  pitch-deck:
+    build:
+      context: ./pitch-deck/src
+      dockerfile: ../Dockerfile
+    volumes:
+      - ./nginx/spa.conf:/etc/nginx/conf.d/default.conf
+    expose:
+      - "80"
+    restart: unless-stopped
+
+  game:
+    build:
+      context: ./game/src
+      dockerfile: ../Dockerfile
+    volumes:
+      - ./nginx/spa.conf:/etc/nginx/conf.d/default.conf
+    expose:
+      - "80"
+    restart: unless-stopped
