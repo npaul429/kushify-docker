@@ -1,7 +1,0 @@
-[submodule "game/src"]
-	path = game/src
-	url = https://github.com/npaul429/kushifycardgame.git
-	branch = Ralph-loop-changes
-[submodule "pitch-deck/src"]
-	path = pitch-deck/src
-	url = https://github.com/npaul429/Kushifypitchdeck.git
