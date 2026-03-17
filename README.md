@@ -32,8 +32,8 @@ docker compose up --build
 
 ```
 nginx (port 80)
-├── /       → web-main (Vite dev server, port 3000) — pitch deck
-└── /play/  → web-play (Vite dev server, port 3001) — card game
+├── /       → pitchdeck (Vite dev server, port 3000) — pitch deck
+└── /play/  → game (Vite dev server, port 3001) — card game
 ```
 
 Source code is volume-mounted from `app-main/` and `app-play/` into the containers. Edit files on your host and changes appear instantly via hot reload.
