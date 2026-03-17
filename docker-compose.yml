@@ -1,5 +1,5 @@
 services:
-  web-main:
+  pitch-deck:
     build:
       context: ./app-main
       dockerfile: ../Dockerfile.main
@@ -11,7 +11,7 @@ services:
     environment:
       - NODE_ENV=development
 
-  web-play:
+  game:
     build:
       context: ./app-play
       dockerfile: ../Dockerfile.play
@@ -28,7 +28,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf:ro
     depends_on:
-      - web-main
-      - web-play
+      - pitch-deck
+      - game
