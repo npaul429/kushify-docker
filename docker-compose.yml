@@ -1,20 +1,20 @@
 services:
   pitchdeck:
     build:
-      context: ./app-main
-      dockerfile: ../Dockerfile.main
+      context: /Users/np/kushify-pitchdeck
+      dockerfile: /Users/np/kushify-docker/Dockerfile.main
     volumes:
-      - ./app-main:/app
+      - /Users/np/kushify-pitchdeck:/app
       - /app/node_modules
     environment:
       - NODE_ENV=development
 
   game:
     build:
-      context: ./app-play
-      dockerfile: ../Dockerfile.play
+      context: /Users/np/kushifycardgame
+      dockerfile: /Users/np/kushify-docker/Dockerfile.play
     volumes:
-      - ./app-play:/app
+      - /Users/np/kushifycardgame:/app
       - /app/node_modules
     environment:
       - NODE_ENV=development
